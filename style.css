@@ -94,6 +94,27 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
+/* Container que segura os 4 cards pequenos superiores */
+.stats-container {
+    display: flex;
+    flex-direction: row;      /* Organiza os cards em linha (um do lado do outro) */
+    justify-content: space-between; /* Distribui o espaço entre eles igualmente */
+    gap: 15px;                /* Espaçamento entre cada um dos cards */
+    padding: 20px;
+    width: 100%;              /* Ocupa a largura total da tela */
+    box-sizing: border-box;
+}
+
+/* Garante que os cards menores se adaptem bem lado a lado */
+.stat-card {
+    flex: 1;                  /* Faz todos os 4 cards terem exatamente o mesmo tamanho */
+    background-color: #ffffff;
+    border: 1px solid #e0dbe5;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    text-align: left;         /* Mantém os textos alinhados à esquerda como no print */
+}
 
 .stat-card {
     background: white;
@@ -226,6 +247,25 @@ button:hover {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+}
+/* Container que segura os dois cards de alerta */
+.secao-alertas {
+    display: flex;
+    flex-direction: row; /* ISSO faz eles ficarem um do lado do outro */
+    gap: 20px;           /* Espaço entre os dois cards */
+    padding: 20px;
+    width: 100%;         /* Garante que eles usem o espaço disponível */
+    box-sizing: border-box;
+}
+
+/* Ajuste para que cada card ocupe o mesmo tamanho (50% da tela cada um) */
+.card-alerta {
+    flex: 1;             /* Faz os dois dividirem o espaço por igual */
+    background-color: #ffffff;
+    border: 1px solid #e0dbe5; 
+    border-radius: 15px;       
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02); 
 }
 
 /* Estilo de cada card individual */
