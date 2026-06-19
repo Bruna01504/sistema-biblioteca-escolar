@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioEscola</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">📚 BiblioEscola</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" onclick="switchTab('inicio')">🏠 Início</a></li>
+            <li><a href="#" onclick="switchTab('livros')">📖 Livros</a></li>
+            <li><a href="#" onclick="switchTab('alunos')">👤 Alunos</a></li>
+            <li><a href="#" onclick="switchTab('emprestimos')">🔄 Empréstimos</a></li>
+            <li><a href="#" onclick="switchTab('fila')">⏳ Fila de Espera</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        
+        <div id="tab-inicio" class="tab-content active">
+            <div class="welcome-banner">
+                <h2>👋 Bem-vinda à BiblioEscola</h2>
+                <p>Gerencie o acervero, empréstimos e devoluções da sua biblioteca escolar.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card clickable" onclick="mostrarRelatorio('livros')">
+                    <h3>📚 5</h3>
+                    <p>Livros no acervo</p>
+                </div>
+                <div class="stat-card clickable" onclick="mostrarRelatorio('alunos')">
+                    <h3>👤 4</h3>
+                    <p>Alunos cadastrados</p>
+                </div>
+                <div class="stat-card clickable" onclick="mostrarRelatorio('emprestimos')">
+                    <h3>🔄 5</h3>
+                    <p>Empréstimos ativos</p>
+                </div>
+                <div class="stat-card alert clickable" onclick="mostrarRelatorio('atrasos')">
+                    <h3>⚠️ 2</h3>
+                    <p>Em atraso</p>
+                </div>
+            </div>
+
+            <div id="container-relatorio" class="card" style="display: none; margin-top: 30px;">
+                <h2 id="titulo-relatorio">Relatório</h2>
+                <div id="conteudo-relatorio" class="table-responsive">
+                    </div>
+            </div>
+        </div>
+
+        <div id="tab-alunos" class="tab-content">
+            <div class="card">
+                <h2>👤 Cadastrar aluno</h2>
+                <form id="form-aluno">
+                    <div class="input-group">
+                        <input type="text" id="nome-aluno" placeholder="Nome completo *" required>
+                        <input type="text" id="turma-aluno" placeholder="Turma *" required>
+                        <select id="turno-aluno" required>
+                            <option value="">Selecione o Turno *</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noite">Noite</option>
+                        </select>
+                    </div>
+                    <button type="submit">👤 Cadastrar aluno</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="tab-livros" class="tab-content">
+            <div class="card">
+                <h2>📖 Cadastrar novo livro</h2>
+                <form id="form-livro">
+                    <div class="input-group">
+                        <input type="text" id="titulo-livro" placeholder="Título *" required>
+                        <input type="text" id="autor-livro" placeholder="Autor *" required>
+                        <input type="number" id="qtd-livro" placeholder="Quantidade de exemplares *" min="1" required>
+                    </div>
+                    <button type="submit">📖 Cadastrar livro</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="tab-emprestimos" class="tab-content">
+            <div class="card">
+                <h2>🔄 Novo empréstimo</h2>
+                <form id="form-emprestimo">
+                    <div class="input-group">
+                        <input type="text" id="emp-aluno" placeholder="Nome do Aluno *" required>
+                        <input type="text" id="emp-livro" placeholder="Título do Livro *" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="date-container">
+                            <label>Data do empréstimo</label>
+                            <input type="date" id="data-emp" required>
+                        </div>
+                        <div class="date-container">
+                            <label>Data de devolução *</label>
+                            <input type="date" id="data-dev" required>
+                        </div>
+                    </div>
+                    <button type="submit">🔄 Registrar empréstimo</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="tab-fila" class="tab-content">
+            <div class="card">
+                <h2>⏳ Entrar na Fila de Espera</h2>
+                <form id="form-fila">
+                    <div class="input-group">
+                        <input type="text" id="fila-aluno" placeholder="Nome do Aluno *" required>
+                        <input type="text" id="fila-livro" placeholder="Título do Livro *" required>
+                    </div>
+                    <button type="submit">⏳ Entrar na Fila</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
