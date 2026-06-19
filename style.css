@@ -220,3 +220,50 @@ button:hover {
     background-color: #f3f0f5;
     color: #4a3b68;
 }
+/* Container que segura os dois cards */
+.secao-alertas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo de cada card individual */
+.card-alerta {
+    background-color: #ffffff;
+    border: 1px solid #e0dbe5; /* Bordinha bem clara */
+    border-radius: 15px;       /* Cantos arredondados iguais da foto */
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02); /* Sombra bem leve */
+}
+
+/* Título dentro do card */
+.card-alerta h3 {
+    color: #4a3b5c; /* Tom de roxo escuro para o texto */
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Alinhamento do ícone e do texto centralizados */
+.conteudo-alerta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Tamanho dos ícones grandes */
+.icone-alerta {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Cor do texto de aviso */
+.conteudo-alerta p {
+    color: #8a8294; /* Cinza suave */
+    margin: 0;
+    font-size: 0.95rem;
+}
