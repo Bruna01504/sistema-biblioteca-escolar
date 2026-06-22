@@ -24,4 +24,4 @@ Transformar o controle físico de uma biblioteca escolar em um sistema digital �
 
 ## 👥 Desenvolvedores (Dupla)
 * [Bruna01504](https://github.com/Bruna01504)
-* Nome da sua Amiga (Link em breve)
+* Isabelly(Link em breve)
