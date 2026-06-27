@@ -24,144 +24,61 @@
         <div id="tab-inicio" class="tab-content active">
             <div class="welcome-banner">
                 <h2>👋 Bem-vinda à BiblioEscola</h2>
-                <p>Gerencie o acervero, empréstimos e devoluções da sua biblioteca escolar.</p>
+                <p>Gerencie o acervo, empréstimos e devoluções da sua biblioteca escolar.</p>
             </div>
-            <div class="stats-container">
-
-    <div class="stat-card clickable" onclick="alternarAba('acervo')">
-        <h3>📚 5</h3>
-        <p>Livros no acervo</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>👤 4</h3>
-        <p>Alunos cadastrados</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>🔄 5</h3>
-        <p>Empréstimos ativos</p>
-    </div>
-
-    <div class="stat-card alert clickable" onclick="mostrarRelatorio('atrasos')">
-        <h3>⚠️ 2</h3>
-        <p>Em atraso</p>
-    </div>
-
-</div> <div class="secao-alertas">
-    
-    <div class="card-alerta">
-        <h3>⚠️ Devoluções em atraso</h3>
-        <div class="conteudo-alerta">
-            <span class="icone-alerta verde">✅</span>
-            <p>Nenhum atraso no momento!</p>
-        </div>
-    </div>
-
-    <div class="card-alerta">
-        <h3>⏱️ Vencem hoje ou amanhã</h3>
-        <div class="conteudo-alerta">
-            <span class="icone-alerta calendario">📅</span>
-            <p>Nenhuma devolução próxima.</p>
-        </div>
-    </div>
-
-</div>
-
-                <div id="aba-acervo" class="aba-conteudo" style="display: none;">
-    <div class="card-alerta">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div id="aba-acervo" class="aba-conteudo" style="display: none;">
-    <div class="card-alerta">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0;">📚 Acervo Geral de Livros</h3>
-            <button onclick="alternarAba('inicio')" style="padding: 5px 10px; cursor: pointer;">Voltar</button>
-        </div>
-        <br>
-        <table class="tabela-sistema">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Total</th>
-                    <th>Disponíveis</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>O Pequeno Príncipe</td>
-                    <td>Antoine de Saint-Exupéry</td>
-                    <td>3</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Dom Casmurro</td>
-                    <td>Machado de Assis</td>
-                    <td>2</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>A Bolsa Amarela</td>
-                    <td>Lygia Bojunga</td>
-                    <td>4</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Vidas Secas</td>
-                    <td>Graciliano Ramos</td>
-                    <td>2</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>O Cortiço</td>
-                    <td>Aluísio Azevedo</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-        <br>
-       
-                <div class="stat-card clickable" onclick="mostrarRelatorio('alunos')">
-                    <h3>👤 4</h3>
+            
+            <div class="stats-grid">
+                <div class="stat-card clickable" onclick="switchTab('livros')">
+                    <h3 id="contador-livros-card">📚 0</h3>
+                    <p>Livros no acervo</p>
+                </div>
+                <div class="stat-card clickable" onclick="switchTab('alunos')">
+                    <h3 id="contador-alunos-card">👤 0</h3>
                     <p>Alunos cadastrados</p>
                 </div>
-                <div class="stat-card clickable" onclick="mostrarRelatorio('emprestimos')">
-                    <h3>🔄 5</h3>
+                <div class="stat-card clickable" onclick="switchTab('emprestimos')">
+                    <h3>🔄 0</h3>
                     <p>Empréstimos ativos</p>
                 </div>
-                <div class="stat-card alert clickable" onclick="mostrarRelatorio('atrasos')">
-                    <h3>⚠️ 2</h3>
+                <div class="stat-card alert clickable" onclick="switchTab('emprestimos')">
+                    <h3>⚠️ 0</h3>
                     <p>Em atraso</p>
-     </div>
+                </div>
+            </div>
 
-</div>
             <div class="secao-alertas">
-    
-    <div class="card-alerta">
-        <h3>⚠️ Devoluções em atraso</h3>
-        <div class="conteudo-alerta">
-            <span class="icone-alerta verde">✅</span>
-            <p>Nenhum atraso no momento!</p>
-        </div>
-    </div>
-
-    <div class="card-alerta">
-        <h3>⏱️ Vencem hoje ou amanhã</h3>
-        <div class="conteudo-alerta">
-            <span class="icone-alerta calendario">📅</span>
-            <p>Nenhuma devolução próxima.</p>
-        </div>
-    </div>
-
-</div>
-
-            <div id="container-relatorio" class="card" style="display: none; margin-top: 30px;">
-                <h2 id="titulo-relatorio">Relatório</h2>
-                <div id="conteudo-relatorio" class="table-responsive">
+                <div class="card-alerta">
+                    <h3>⚠️ Devoluções em atraso</h3>
+                    <div class="conteudo-alerta">
+                        <span class="icone-alerta verde">✅</span>
+                        <p>Nenhum atraso no momento!</p>
                     </div>
+                </div>
+
+                <div class="card-alerta">
+                    <h3>⏱️ Vencem hoje ou amanhã</h3>
+                    <div class="conteudo-alerta">
+                        <span class="icone-alerta calendario">📅</span>
+                        <p>Nenhuma devolução próxima.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 30px;">
+                <h3>📚 Acervo Geral de Livros</h3>
+                <br>
+                <table class="tabela-sistema">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Total</th>
+                            <th>Disponíveis</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-livros">
+                        </tbody>
+                </table>
             </div>
         </div>
 
@@ -181,6 +98,22 @@
                     </div>
                     <button type="submit">👤 Cadastrar aluno</button>
                 </form>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>📋 Lista de Alunos Cadastrados</h3>
+                <br>
+                <table class="tabela-sistema">
+                    <thead>
+                        <tr>
+                            <th>Nome do Aluno</th>
+                            <th>Turma</th>
+                            <th>Turno</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-alunos">
+                        </tbody>
+                </table>
             </div>
         </div>
 
