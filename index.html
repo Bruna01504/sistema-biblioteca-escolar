@@ -28,21 +28,25 @@
             </div>
             
             <div class="stats-grid">
-                <div class="stat-card clickable" onclick="switchTab('livros')">
+                <div class="stat-card clickable" onclick="mostrarRelatorio('livros')">
                     <h3 id="contador-livros-card">📚 0</h3>
                     <p>Livros no acervo</p>
                 </div>
-                <div class="stat-card clickable" onclick="switchTab('alunos')">
+                <div class="stat-card clickable" onclick="mostrarRelatorio('alunos')">
                     <h3 id="contador-alunos-card">👤 0</h3>
                     <p>Alunos cadastrados</p>
                 </div>
-                <div class="stat-card clickable" onclick="switchTab('emprestimos')">
-                    <h3>🔄 0</h3>
+                <div class="stat-card clickable" onclick="mostrarRelatorio('emprestimos')">
+                    <h3 id="contador-emprestimos-card">🔄 0</h3>
                     <p>Empréstimos ativos</p>
                 </div>
-                <div class="stat-card alert clickable" onclick="switchTab('emprestimos')">
+                <div class="stat-card alert clickable" onclick="mostrarRelatorio('atrasos')">
                     <h3>⚠️ 0</h3>
                     <p>Em atraso</p>
+                </div>
+                <div class="stat-card clickable" onclick="mostrarRelatorio('fila')">
+                    <h3 id="contador-fila-card">⏳ 0</h3>
+                    <p>Fila de espera</p>
                 </div>
             </div>
 
@@ -64,21 +68,10 @@
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 30px;">
-                <h3>📚 Acervo Geral de Livros</h3>
+            <div id="container-relatorio-home" class="card" style="margin-top: 30px; display: none;">
+                <h3 id="titulo-relatorio-home">📋 Relatório</h3>
                 <br>
-                <table class="tabela-sistema">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Autor</th>
-                            <th>Total</th>
-                            <th>Disponíveis</th>
-                        </tr>
-                    </thead>
-                    <tbody id="corpo-tabela-livros">
-                        </tbody>
-                </table>
+                <div id="tabela-relatorio-home"></div>
             </div>
         </div>
 
@@ -151,6 +144,24 @@
                     </div>
                     <button type="submit">🔄 Registrar empréstimo</button>
                 </form>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>📋 Histórico de Empréstimos Ativos</h3>
+                <br>
+                <table class="tabela-sistema">
+                    <thead>
+                        <tr>
+                            <th>Aluno</th>
+                            <th>Livro</th>
+                            <th>Data Empréstimo</th>
+                            <th>Data Devolução</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-emprestimos">
+                        </tbody>
+                </table>
             </div>
         </div>
 

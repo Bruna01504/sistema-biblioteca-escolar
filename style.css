@@ -89,10 +89,11 @@ body {
 }
 
 /* 4. GRIDS DE ESTATÍSTICAS */
-.stats-grid {
+ .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
+    margin-bottom: 30px;
 }
 /* Container que segura os 4 cards pequenos superiores */
 .stats-container {
@@ -306,4 +307,45 @@ button:hover {
     color: #8a8294; /* Cinza suave */
     margin: 0;
     font-size: 0.95rem;
+}
+/* Container dos dois cards de alertas grandes */
+.secao-alertas {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+/* Formatação individual de cada um dos cards de alerta */
+.card-alerta {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e0dbe5; 
+    border-radius: 15px;       
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo geral para tabelas organizadas */
+.tabela-sistema {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-sistema th, .tabela-sistema td {
+    border: 1px solid #e0dbe5;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-sistema th {
+    background-color: #f8f6f9;
+    font-weight: bold;
 }
